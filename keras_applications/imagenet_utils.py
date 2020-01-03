@@ -84,12 +84,8 @@ def _preprocess_numpy_input(x, data_format, mode, **kwargs):
                 x[:, 2, :, :] /= std[2]
     else:
         x[..., 0] -= mean[0]
-        x[..., 1] -= mean[1]
-        x[..., 2] -= mean[2]
         if std is not None:
             x[..., 0] /= std[0]
-            x[..., 1] /= std[1]
-            x[..., 2] /= std[2]
     return x
 
 
